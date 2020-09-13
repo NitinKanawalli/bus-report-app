@@ -19,9 +19,9 @@
         <h2>
           <span class="b">{{ item.organisation }}</span>
           <span class="b">{{ item.date }}</span>
-          <button (click)="showHide(ind)">show/hide</button>
+          <button (click)="showHide(ind)">Show/Hide</button>
         </h2>
-        <div [id]="'showHide'+ ind">
+        <div [id]="'showHide'+ ind" style="display:none">
           <div>
             <app-data [busData]="item.busData"></app-data>
           </div>

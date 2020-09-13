@@ -49,4 +49,5 @@ export class ReportComponent implements OnInit {
       x.style.display = 'none';
     }
   }
+
 }

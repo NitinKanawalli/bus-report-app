@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th scope="col">Bus ID</th>
+    <th scope="col">Route Variant</th>
+    <th scope="col">Status</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let data of busData">
+      <td>{{ data.busId }}</td>
+      <td>{{ data.routeVariant }}</td>
+      <td
+        [ngClass]="{
+          late: getStatus(data.deviationFromTimetable) === 'Late',
+          ontime: getStatus(data.deviationFromTimetable) === 'On time',
+          early: getStatus(data.deviationFromTimetable) === 'Early',
+          unknown: getStatus(data.deviationFromTimetable) === 'Unknown'
+        }"
+       class="CellWithComment" >
+       <span *ngIf="getStatus(data.deviationFromTimetable) === 'Late'" class="CellComment">Service {{ data.busId }} is running late. Plan accordingly</span>
+       <span *ngIf="getStatus(data.deviationFromTimetable) === 'Early'" class="CellComment">Service {{ data.busId }} is running early. Plan accordingly</span>
+       <span *ngIf="getStatus(data.deviationFromTimetable) === 'Unknown'" class="CellComment">Service {{ data.busId }} is Unknown. Plan accordingly</span>
+        {{ getStatus(data.deviationFromTimetable) }}
+      </td>
+    </tr>
+  </tbody>
+</table>

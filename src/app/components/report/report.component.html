@@ -1,0 +1,33 @@
+<header>
+  <div class="header">
+    <a href="#" class="logo">
+      <img
+        src="../../../assets/images/transport_for_NSW.png"
+        class="header-logo"
+      />
+    </a>
+  </div>
+</header>
+<div class="container container-body" id="accordion">
+  <div >
+    <div class="heading">
+      <h1>Reports</h1>
+    </div>
+    <br />
+    <div *ngFor="let item of reports; let ind = index">
+      <div class="card">
+        <h2>{{ item.organisation }}</h2>
+        <div>
+          <app-data [busData]="item.busData"></app-data>
+        </div>
+        <br />
+        <div>
+          <textarea placeholder="start writing..." rows="3"></textarea>
+          <div class="row">
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

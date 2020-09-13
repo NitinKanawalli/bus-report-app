@@ -1,0 +1,64 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 40px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+  position: relative;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+td:hover ,tr:hover {
+  background-color: rgb(210, 232, 247);
+}
+
+
+.late {
+    color: #ff0000;
+    font-style: italic;
+}
+
+.ontime {
+    color: green;
+}
+
+.early {
+    color: burlywood;
+}
+
+.unknown {
+    color: orange;
+}
+
+.CellWithComment{
+  position:relative;
+}
+
+.CellComment{
+  display:none;
+  position:absolute; 
+  z-index:100;
+  border:1px;
+  background-color:yellow;
+
+  padding:3px;
+  color:red; 
+  top:20px; 
+  left:20px;
+}
+
+.CellWithComment:hover span.CellComment{
+  display:block;
+}

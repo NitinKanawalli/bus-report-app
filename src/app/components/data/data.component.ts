@@ -14,9 +14,9 @@ export class DataComponent implements OnInit {
   }
 
   getStatus(deviation): any {
-    if (deviation > 220) {
+    if (deviation > 200) {
       return 'Late';
-    } else if (deviation <= 220 && deviation > 0) {
+    } else if (deviation <= 200 && deviation > 0) {
       return 'On time';
     } else if (deviation < 0) {
       return 'Early';

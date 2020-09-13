@@ -51,10 +51,10 @@ td:hover ,tr:hover {
   position:absolute; 
   z-index:100;
   border:1px;
-  background-color:yellow;
+  background-color:rgb(2, 218, 247);
 
   padding:3px;
-  color:red; 
+  color:rgb(97, 34, 34); 
   top:20px; 
   left:20px;
 }

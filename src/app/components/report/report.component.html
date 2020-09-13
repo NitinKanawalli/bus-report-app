@@ -9,22 +9,37 @@
   </div>
 </header>
 <div class="container container-body" id="accordion">
-  <div >
+  <div>
     <div class="heading">
       <h1>Reports</h1>
     </div>
     <br />
     <div *ngFor="let item of reports; let ind = index">
       <div class="card">
-        <h2>{{ item.organisation }}</h2>
-        <div>
-          <app-data [busData]="item.busData"></app-data>
-        </div>
-        <br />
-        <div>
-          <textarea placeholder="start writing..." rows="3"></textarea>
-          <div class="row">
-            <input type="submit" value="Submit" />
+        <h2>
+          <span class="b">{{ item.organisation }}</span>
+          <span class="b">{{ item.date }}</span>
+          <button (click)="showHide(ind)">show/hide</button>
+        </h2>
+        <div [id]="'showHide'+ ind">
+          <div>
+            <app-data [busData]="item.busData"></app-data>
+          </div>
+          <br />
+          <div>
+            <textarea
+              placeholder="write something..."
+              rows="3"
+              [id]="'saveNotes' + ind"
+              [innerHTML]="readFromLocalStorage(item.organisation)"
+            ></textarea>
+            <div class="row">
+              <input
+                type="submit"
+                value="Save"
+                (click)="writeNotesToLocalStorage(item.organisation, ind)"
+              />
+            </div>
           </div>
         </div>
       </div>

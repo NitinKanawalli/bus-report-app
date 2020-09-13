@@ -7,7 +7,7 @@
   <tbody>
     <tr *ngFor="let data of busData">
       <td>{{ data.busId }}</td>
-      <td>{{ data.routeVariant }}</td>
+      <td [innerHTML]= "data.routeVariant | strongifyNumber">{{ data.routeVariant }}</td>
       <td
         [ngClass]="{
           late: getStatus(data.deviationFromTimetable) === 'Late',

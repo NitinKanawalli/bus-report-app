@@ -7,13 +7,15 @@ import { ReportComponent } from './components/report/report.component';
 import { ReportService } from './services/report.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DataComponent } from './components/data/data.component';
+import { StrongifyNumberPipe } from './strongify-number.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
-    DataComponent
+    DataComponent,
+    StrongifyNumberPipe
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import * as moment from 'moment-timezone';
 import { ReportService } from 'src/app/services/report.service';
+import { Subscription } from 'rxjs';
+
+import * as saveAs from 'file-saver';
 
 @Component({
   selector: 'app-report',
@@ -14,7 +17,12 @@ export class ReportComponent implements OnInit {
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.reportService.readData().subscribe((source) => this.reports = source.data);
+    this.getDataFromReportService();
+  }
+
+  // tslint:disable-next-line: typedef
+  getDataFromReportService() {
+    return this.reportService.readData().subscribe((source) => this.reports = source.data);
   }
 
   getCurrentDate(): string {
@@ -22,4 +30,23 @@ export class ReportComponent implements OnInit {
     return this.date;
   }
 
+  writeNotesToLocalStorage(forOrg, index): void {
+    const textNotes = (document.getElementById('saveNotes' + index) as HTMLInputElement).value;
+    // const file = new Blob(['hello world'], { type: 'text/csv;charset=utf-8' });
+    // saveAs(file, 'saveNotes.csv');
+    localStorage.setItem(forOrg, textNotes);
+  }
+
+  readFromLocalStorage(fromOrg): any {
+    return localStorage.getItem(fromOrg);
+  }
+
+  showHide(ind): void {
+    const x = document.getElementById('showHide' + ind);
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
 }

@@ -94,7 +94,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+  float: left;
 }
 
 input[type=submit]:hover {
@@ -111,4 +111,23 @@ input[type=submit]:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+span.b {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  border: none;    
+  background-color: none; 
+}
+
+button {
+  background-color: #87baf5;
+  color: rgb(2, 32, 5);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 }

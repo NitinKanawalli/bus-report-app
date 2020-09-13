@@ -1,0 +1,10 @@
+Assumptions:
+
+1: Saving notes and displaying in the same text box on save button click. The data is stored in local storage with key as organisation name
+
+2: Status of each bus service is calculated with these assumptions
+    a: display 'On time' if deviation is within 0 and 200 range
+    b: display 'Late' if deviation is greater than 200
+    c: display 'Early' if deviation is smaller than 0
+    d: display 'Unknown' if deviation is "Unknown"
+    
